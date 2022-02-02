@@ -36,9 +36,9 @@
 
 <!-- ここからjs -->
 <script>
-//クリックしたボタンの値を引数にバトル関数を定義
+//【定義】クリックしたボタンの値を引数に結果まで表示するバトル関数
 const battle =(myHand,yourHand)=>{
-    // 引き算し、結果を表示
+    // 対戦結果を導出し、結果を表示
     let result = myHand-yourHand;
     if(result===-2 || result===1){
         $('.result-text').html('あなたの負け');
@@ -56,9 +56,8 @@ const battle =(myHand,yourHand)=>{
     }else if(yourHand == 3){
         $('.result-img').html('<img src="images/pa.png" alt="">');
     }
-    
 }
-//ボタンをクリックしたらバトルの実行
+//ボタンをクリックしたら引数を取得しバトルの実行
 $(`#gu`).on("click",()=>{
 battle(document.getElementById("gu").value,Math.floor(Math.random()*3+1));
 });
@@ -68,7 +67,6 @@ battle(document.getElementById("choki").value,Math.floor(Math.random()*3+1));
 $(`#pa`).on("click",()=>{
 battle(document.getElementById("pa").value,Math.floor(Math.random()*3+1));
 });
-
 </script>
 </body>
 </html>
